@@ -1,6 +1,7 @@
 package EffortLogger;
 
 import javafx.application.Application;
+import javafx.scene.Parent;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 public class DefectConsole extends Application {
+	
     // Create a table view to display defects
     private TableView<Defect> defectTable = new TableView<>();
     // Create an observable list to store defects
@@ -21,6 +23,8 @@ public class DefectConsole extends Application {
     }
 
     public void start(Stage primaryStage) {
+    	
+    	
         primaryStage.setTitle("Defect Console");
 
         // Create table columns for defect data
@@ -32,6 +36,17 @@ public class DefectConsole extends Application {
         defectTable.getColumns().addAll(defectNameColumn, defectDescriptionColumn, defectCategoryColumn);
         defectTable.setItems(defects);
 
+        Label projectLabel = new Label("Select the Project:");
+        
+        ComboBox<String> projectInput = new ComboBox<>();
+        projectInput.getItems().addAll("Development Project", "Business Project");
+        projectInput.setValue("Development Project");
+        
+        Label nameLabel = new Label("Defect Name:");
+        Label descriptionLabel = new Label("Defect Description:");
+        Label categoryLabel = new Label("Defect Category:");
+        Label actionsLabel = new Label("Defect Actions:");
+        
         // Create input fields for defect details
         TextField defectNameInput = new TextField();
         TextField defectDescriptionInput = new TextField();
@@ -41,18 +56,23 @@ public class DefectConsole extends Application {
 
         // Create buttons for adding and removing defects
         Button addButton = new Button("Add Defect");
-        addButton.setOnAction(e -> addDefect(defectNameInput, defectDescriptionInput, defectCategoryInput));
+        addButton.setOnAction(e -> addDefect(defectNameInput, defectDescriptionInput, defectCategoryInput, projectInput));
         Button removeButton = new Button("Remove Defect");
         removeButton.setOnAction(e -> removeDefect());
 
         // Set preferred widths for text fields
-        defectNameInput.setPrefWidth(200);
-        defectDescriptionInput.setPrefWidth(300);
+        defectNameInput.setPrefWidth(150);
+        defectDescriptionInput.setPrefWidth(200);
 
         // Create a vertical box to arrange elements
         VBox vBox = new VBox();
-        vBox.setPrefWidth(600);
-        vBox.getChildren().addAll(defectTable, defectNameInput, defectDescriptionInput, defectCategoryInput, addButton, removeButton);
+        vBox.setPrefWidth(500);
+        
+        HBox buttonBox = new HBox(10); // Adjust spacing as needed
+        buttonBox.getChildren().addAll(addButton, removeButton);
+        
+        vBox.getChildren().addAll(projectLabel, projectInput, nameLabel, defectNameInput, descriptionLabel, 
+        		defectDescriptionInput, categoryLabel, defectCategoryInput, actionsLabel, buttonBox, defectTable);
 
         // Create the main scene and display it
         Scene scene = new Scene(vBox);
@@ -68,13 +88,14 @@ public class DefectConsole extends Application {
     }
 
     // Add a new defect to the list
-    private void addDefect(TextField nameInput, TextField descriptionInput, ComboBox<String> categoryInput) {
-        String name = nameInput.getText();
-        String description = descriptionInput.getText();
-        String category = categoryInput.getValue();
-        defects.add(new Defect(name, description, category));
-        nameInput.clear();
-        descriptionInput.clear();
+    private void addDefect(TextField nameInput, TextField descriptionInput, ComboBox<String> categoryInput, ComboBox<String> projectInput) {
+    	 String project = projectInput.getValue();
+    	 String name = nameInput.getText();
+    	 String description = descriptionInput.getText();
+    	 String category = categoryInput.getValue();
+    	 defects.add(new Defect(name, description, category, project));
+    	 nameInput.clear();
+    	 descriptionInput.clear();
     }
 
     // Remove the selected defect from the list
@@ -90,11 +111,13 @@ public class DefectConsole extends Application {
         private final SimpleStringProperty defectName;
         private final SimpleStringProperty defectDescription;
         private final SimpleStringProperty defectCategory;
+        private final SimpleStringProperty project;
 
-        public Defect(String defectName, String defectDescription, String defectCategory) {
+        public Defect(String defectName, String defectDescription, String defectCategory, String project) {
             this.defectName = new SimpleStringProperty(defectName);
             this.defectDescription = new SimpleStringProperty(defectDescription);
             this.defectCategory = new SimpleStringProperty(defectCategory);
+            this.project = new SimpleStringProperty(project);
         }
 
         // Retrieve property by name
