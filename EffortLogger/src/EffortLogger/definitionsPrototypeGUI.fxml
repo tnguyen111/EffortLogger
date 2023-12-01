@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="600.0" prefHeight="541.0" prefWidth="600.0">
+         <children>
+            <VBox layoutX="14.0" layoutY="14.0" prefHeight="347.0" prefWidth="556.0" spacing="10.0">
+               <children>
+                  <Label text="Definitions" />
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="198.0" prefWidth="581.0">
+                           <children>
+                              <TableView prefHeight="197.0" prefWidth="613.0">
+                                <columns>
+                                  <TableColumn prefWidth="30.0" text="1a." />
+                                  <TableColumn prefWidth="159.0" text="Specific Project Name Here" />
+                                    <TableColumn prefWidth="343.0" text="1b. Specify Life Cycle Steps for each project (Use the numbers from list number 2)">
+                                       <columns>
+                                          <TableColumn prefWidth="22.0" text="1" />
+                                          <TableColumn prefWidth="22.0" text="2" />
+                                          <TableColumn prefWidth="22.0" text="3" />
+                                          <TableColumn prefWidth="22.0" text="4" />
+                                          <TableColumn prefWidth="22.0" text="5" />
+                                          <TableColumn prefWidth="22.0" text="6" />
+                                          <TableColumn prefWidth="22.0" text="7" />
+                                          <TableColumn prefWidth="22.0" text="8" />
+                                          <TableColumn prefWidth="22.0" text="9" />
+                                          <TableColumn prefWidth="22.0" text="10" />
+                                          <TableColumn prefWidth="22.0" text="11" />
+                                          <TableColumn prefWidth="22.0" text="12" />
+                                          <TableColumn prefWidth="22.0" text="13" />
+                                          <TableColumn prefWidth="22.0" text="14" />
+                                          <TableColumn prefWidth="22.0" text="15" />
+                                          <TableColumn prefWidth="22.0" text="16" />
+                                          <TableColumn prefWidth="22.0" text="17" />
+                                          <TableColumn prefWidth="22.0" text="18" />
+                                          <TableColumn prefWidth="22.0" text="19" />
+                                          <TableColumn prefWidth="22.0" text="20" />
+                                          <TableColumn prefWidth="22.0" text="21" />
+                                          <TableColumn prefWidth="22.0" text="22" />
+                                          <TableColumn prefWidth="22.0" text="23" />
+                                          <TableColumn prefWidth="22.0" text="24" />
+                                          <TableColumn prefWidth="22.0" text="25" />
+                                       </columns>
+                                    </TableColumn>
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                          </content>
+                        </ScrollPane>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="EC is the Effort Category and the default for each life cycle step can be specified in table 3." wrapText="true" />
+                              <Label text="Label" wrapText="true" />
+                           </children>
+                        </VBox>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                          </content>
+                        </ScrollPane>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>
