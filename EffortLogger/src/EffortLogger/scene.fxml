@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DisplayViewController">
+   <children>
+      <ComboBox fx:id="project" layoutX="89.0" layoutY="124.0" prefHeight="25.0" prefWidth="200.0" />
+      <ComboBox fx:id="lifeCycleStep" layoutX="422.0" layoutY="124.0" prefHeight="25.0" prefWidth="200.0" />
+      <ComboBox fx:id="effortCategory" layoutX="89.0" layoutY="189.0" prefHeight="25.0" prefWidth="200.0" />
+      <ComboBox fx:id="domain" layoutX="422.0" layoutY="189.0" prefHeight="25.0" prefWidth="200.0" />
+      <ComboBox fx:id="language" layoutX="422.0" layoutY="260.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button fx:id="startActivity" layoutX="278.0" layoutY="54.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Start an Activity" />
+      <Button fx:id="stopActivity" layoutX="275.0" layoutY="418.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Stop this Activity" />
+      <Label layoutX="90.0" layoutY="104.0" text="Project">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="104.0" text="Life Cycle Syep">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="168.0" text="Effort Category">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="168.0" text="Domain">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="235.0" text="Language">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="235.0" text="Note">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Text layoutX="128.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="When you start the new activity, press the &quot;Start an Activity&quot; button">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="time" layoutX="424.0" layoutY="321.0" />
+      <Text layoutX="423.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextArea layoutX="89.0" layoutY="264.0" prefHeight="105.0" prefWidth="274.0" wrapText="true" />
+      <Text layoutX="103.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the &quot;Stop this Activity&quot; to generate an effort log entry using the attributes above.">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
